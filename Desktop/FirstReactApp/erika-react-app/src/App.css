@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  background-color: rgb(194, 193, 193);
+}
+.title {
+  font-family: cursive;
+}
+.subtitles {
+  color: rgb(38, 65, 117);
+}
+
+.closing {
+  background-color: rgb(142, 113, 150);
+  font-family: cursive;
+  font-size: 30px;
+}
+
+
