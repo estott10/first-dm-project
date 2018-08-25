@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url("./WeatherTrackerImage.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .App-logo {
@@ -17,7 +21,8 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .App-intro {
@@ -42,8 +47,14 @@ div {
   justify-content: center;
 }
 
-.submit {
+.search {
   width: 150px;
-  height: 60px;
+  height: 50px;
   background-color: darkgray;
+}
+
+.input {
+  width: 500px;
+  height: 50px;
+  border-radius: 15px
 }

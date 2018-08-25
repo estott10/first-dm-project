@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 
 export default class Weather extends Component {
+   
         //binding
     //methods
 
@@ -10,8 +11,8 @@ export default class Weather extends Component {
         return(
             <div>
                <h2> Temperatures </h2>
-               {this.props.winfo}
-               {this.props.temp}
+               <h4>{this.props.winfo}</h4>
+               <h5>{this.props.temp}</h5>
             </div>
 
         )
