@@ -29,7 +29,7 @@
   to { transform: rotate(360deg); }
 }
 
-.input {
+.inputfield {
   width: 400px;
   height: 60px;
 
@@ -40,4 +40,10 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.submit {
+  width: 150px;
+  height: 60px;
+  background-color: darkgray;
 }
