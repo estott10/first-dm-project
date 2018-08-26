@@ -10,7 +10,7 @@ export default class Weather extends Component {
     render(){
 
         return(
-            <div>
+            <div className="weather-card">
                <h2> Current Temperature </h2>
                <h4>{this.props.winfo}</h4>
                <h5 className="weathertext" >{this.props.temp}</h5>

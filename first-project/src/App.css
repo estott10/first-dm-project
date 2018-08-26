@@ -70,8 +70,32 @@ div {
  margin-bottom: 10px;
 }
 
+.weather-card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: aliceblue;
+  width: 350px;
+  height: 350px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-left: auto;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
 .weathertext {
   font-size: 60px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.headline{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  background-color: white;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
 }
