@@ -63,10 +63,12 @@ export default class App extends Component {
       <div className="App">
       <h1 className= "App-title">Today's Weather</h1>
       <span>
-      <input type="text" placeholder="City Name" className='input' value={this.state.city} onChange={this.onchange}/>
+      <h4 className="input-header">Enter City Here:</h4>
+      <input type="text" placeholder="Los Angeles" className='input' value={this.state.city} onChange={this.onchange} />
       <button className='search' onClick= {this.submitchange} >Search</button>
       </span>
-      <Weather winfo= {weatherinfo} temp= {currenttemp}/>
+      <Weather winfo= {weatherinfo} temp= {()=> {if(currenttemp === NaN) {""}else {currenttemp} } }
+      />
       <DisplayNews facts={facts} displaynews={breakingnews} newslink={breakingnewsurl} />
       <ExitMessage />
       </div>
