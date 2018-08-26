@@ -24,7 +24,7 @@ export default class App extends Component {
 
 
   submitchange= () => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&APPID=${this.state.apiKey}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=imperial&APPID=${this.state.apiKey}`)
     .then( (response)=> {
         this.setState( {weatherConditions: response.data.main.temp} ) 
       })
@@ -53,8 +53,7 @@ export default class App extends Component {
     
   render() {
    const weatherinfo = "Local Weather"
-   let currenttemp = 
-   Math.floor(((parseInt(this.state.weatherConditions, 10)* 9) /5) - 459.67);
+   let currenttemp = this.state.weatherConditions.toString();
    let breakingnews= this.state.news;
    let breakingnewsurl= this.state.newsurl;
    let facts= this.state.facts;
@@ -67,7 +66,7 @@ export default class App extends Component {
       <input type="text" placeholder="Los Angeles" className='input' value={this.state.city} onChange={this.onchange} />
       <button className='search' onClick= {this.submitchange} >Search</button>
       </span>
-      <Weather winfo= {weatherinfo} temp= {()=> {if(currenttemp === NaN) {""}else {currenttemp} } }
+      <Weather winfo= {weatherinfo} temp= {currenttemp}
       />
       <DisplayNews facts={facts} displaynews={breakingnews} newslink={breakingnewsurl} />
       <ExitMessage />

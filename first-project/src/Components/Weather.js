@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../App.css';
 
 
 export default class Weather extends Component {
@@ -10,9 +11,9 @@ export default class Weather extends Component {
 
         return(
             <div>
-               <h2> Temperatures </h2>
+               <h2> Current Temperature </h2>
                <h4>{this.props.winfo}</h4>
-               <h5>{this.props.temp}</h5>
+               <h5 className="weathertext" >{this.props.temp}</h5>
             </div>
 
         )
