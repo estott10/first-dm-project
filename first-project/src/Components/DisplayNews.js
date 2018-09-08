@@ -16,8 +16,8 @@ export default class DisplayNews extends Component {
         //Destructuring
         return(
             <div className="displaynews">
-                <h3 className="headline">{this.props.displaynews}</h3>
-                <a href={this.props.newslink}>Get The Full Story</a>
+                <h3 className="headline">{this.props.showNews}</h3>
+                <a href={this.props.link}>Get The Full Story</a>
         </div>
         ) 
     }

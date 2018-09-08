@@ -6,7 +6,7 @@ const ExitMessage = () =>{
 
     return(
         <div> {checkOutLink()}
-        "Click the Link Above or the Full Story"
+        "Click the Link Below or the Full Story"
         </div>
     ) 
 }
