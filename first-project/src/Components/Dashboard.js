@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
 
 
     render() {
-
+        const { articleList } = this.props
         return (
             <div>
                 <div>
@@ -24,8 +24,18 @@ export default class Dashboard extends Component {
                         <button className='search' onClick={() => { this.props.submitWeather(); this.props.searchArticles() }} >Search</button>
                     </span>
                 </div>
-                <Weather winfo={this.props.winfo} currentTemp={this.props.temp} hightemp={this.props.high} lowtemp={this.props.low} />
-                <DisplayNews showNews={this.props.displaynews} link={this.props.newslink} />
+                <div>
+                    <Weather currentTemp={this.props.temp} hightemp={this.props.high} lowtemp={this.props.low} />
+                </div>
+                <div>
+                   <h2 className= "top_stories"> World News Top Stories</h2>
+                    {articleList.map((elem, i) => {
+                        return <ul className="article_List" key={i}>
+                        <DisplayNews newsTitle={elem.title} newsUrl={elem.url} /> 
+                        </ul>;
+                        })
+                    }
+                </div>
             </div>
 
         )

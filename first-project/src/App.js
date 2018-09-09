@@ -11,9 +11,9 @@ export default class App extends Component {
       weatherHigh: "",
       weatherLow: "",
       city: "",
+      weatherObj: [],
       apiKey: '156de3e62727130be6afca5f4c49d571',
-      news: "",
-      newsurl: "",
+      newsList: [],
       newsapiKey: '2a16d2b9dc7445648d479c84c235c29d',
       country: "us",
     }
@@ -36,7 +36,7 @@ export default class App extends Component {
         this.setState({ 
           weatherConditions: result.data.temp,
           weatherHigh: result.data.temp_max,
-          weatherLow: result.data.temp_min
+          weatherLow: result.data.temp_min,
         })
       })
     }
@@ -45,10 +45,9 @@ export default class App extends Component {
 
     axios.get('/api/news')
       .then((result) => {
-        console.log(result.data.articles[0].title)
+        console.log(result.data.articles)
         this.setState({
-          news: result.data.articles[0].title,
-          newsurl: result.data.articles[0].url
+          newsList: result.data.articles,
         })
       })
   }
@@ -71,17 +70,15 @@ export default class App extends Component {
   }
 
   render() {
-    const weatherinfo = "Local Weather"
     let currenttemp = this.state.weatherConditions.toString();
     let highTemp= this.state.weatherHigh.toString();
     let lowTemp= this.state.weatherLow.toString();
 
 
-
     return (
       <div className="App">
         <h1 className="App-title">Today's Weather</h1>
-        <Dashboard weatherinput={this.onchange} city={this.state.city} submitWeather={this.submitchange} searchArticles={this.searchArticles} displaynews={this.state.news} newslink={this.state.newsurl} winfo={weatherinfo} temp={currenttemp} high={highTemp} low={lowTemp}
+        <Dashboard weatherinput={this.onchange} city={this.state.city} submitWeather={this.submitchange} searchArticles={this.searchArticles} articleList={this.state.newsList}  temp={currenttemp} high={highTemp} low={lowTemp}
         />
       </div>
     );
