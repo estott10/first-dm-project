@@ -19,7 +19,6 @@ export default class App extends Component {
     }
     this.submitchange = this.submitchange.bind(this)
     this.onchange = this.onchange.bind(this)
-    this.addobj = this.addobj.bind(this)
     this.searchArticles = this.searchArticles.bind(this)
   }
   
@@ -56,17 +55,6 @@ export default class App extends Component {
   onchange = (event) => {
     const { value } = event.target;
     this.setState({ city: value })
-  }
-
-  addobj = () => {
-    const funfacts = `Top Story in ${this.state.city}`
-
-    debugger
-    axios.post('/api/bigform', funfacts)
-      .then((response) => {
-        debugger
-        this.setState({ facts: response.data })
-      })
   }
 
   render() {
