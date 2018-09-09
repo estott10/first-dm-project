@@ -7,9 +7,9 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      weatherConditions: "",
-      weatherHigh: "",
-      weatherLow: "",
+      weatherConditions: "65",
+      weatherHigh: "72",
+      weatherLow: "54",
       city: "",
       weatherObj: [],
       apiKey: '156de3e62727130be6afca5f4c49d571',
@@ -51,6 +51,12 @@ export default class App extends Component {
       })
   }
 
+  clear= () => {
+    this.setState( {
+      city: ""
+    })
+  }
+
 
   onchange = (event) => {
     const { value } = event.target;
@@ -65,8 +71,8 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <h1 className="App-title">Today's Weather</h1>
-        <Dashboard weatherinput={this.onchange} city={this.state.city} submitWeather={this.submitchange} searchArticles={this.searchArticles} articleList={this.state.newsList}  temp={currenttemp} high={highTemp} low={lowTemp}
+       <nav className="nav_bar"> <h1 className="App-title">Today's Weather</h1> </nav>
+        <Dashboard weatherinput={this.onchange} city={this.state.city} submitWeather={this.submitchange} searchArticles={this.searchArticles} articleList={this.state.newsList}  temp={currenttemp} high={highTemp} low={lowTemp} clearInput= {this.clear}
         />
       </div>
     );
